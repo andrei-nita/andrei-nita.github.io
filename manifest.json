@@ -1,7 +1,7 @@
 {
   "short_name": "Web Development",
-  "name": "Learn Web Development",
-  "description": "Learn Web Development step by step",
+  "name": "Web Dev",
+  "description": "Andrei notes on web development",
   "start_url": "/?source=pwa",
   "background_color": "#3367D6",
   "display": "standalone",
