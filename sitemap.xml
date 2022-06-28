@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://andrei-nita.github.io/</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/index.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/introduction/installation.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/introduction/ohmyzsh.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/introduction/hello-world.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/variables.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/built-in-variables.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/arrays.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/loops.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/logic.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/functions.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/braces.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/redirections.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/syntax/other.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/index.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/sudo.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/cd.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/ls.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/cat.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/cp.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/rsync.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/ssh.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/mv.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/touch.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/mkdir.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/rm.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/chmod.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/grep.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/less.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/read.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/tail.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/head.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/sort.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/uniq.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/cut.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/sed.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/commands/kill.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/zsh/credits.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/index.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/introduction/installation.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/introduction/setup.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/introduction/hello-world.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/introduction/read-explanation.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/introduction/comments.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/introduction/go-commands.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/introduction/simple-program.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/syntax/variables.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/syntax/scope.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://andrei-nita.github.io/tutorial/go/data-types/index.html</loc>
+  <lastmod>2022-06-28T06:43:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+</urlset>
