@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Development with Andrei</title>
+    <meta name="description"
+          content="I share what I know or find useful about: HTML, CSS, JS, PWA, Golang, SQL, SEO, Marketing, Deployment, Scalability with a focus on simplicity, productivity and reliability.">
+    <meta name="keywords" content="Go, Golang, HTML, CSS, JavaScript, Front-end, Back-end">
+    <meta name="author" content="Andrei Nita">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Learn Web Development">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andrei-nita.github.io">
+    <meta property="og:image" content="https://andrei-nita.github.io/img/og-img.png">
+
+    <meta name="theme-color" content="#272727">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <script src="script/script.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!--Navbar-->
+<nav class="topnav" id="myTopnav">
+    <a href="/" class="active">AN</a>
+    <div class="dropdown">
+        <button class="dropbtn">Projects
+            <svg id="caret" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+        </button>
+        <div class="dropdown-content">
+            <a href="https://github.com/andrei-nita/pwasimple" target="_blank">PWA Simple</a>
+<!--            <a href="#">Link 2</a>-->
+<!--            <a href="#">Link 3</a>-->
+        </div>
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=15551234567">WhatsApp</a>
+    <a href="mailto:andreinita@icloud.com">Email</a>
+    <a href="Business%20Plan%20Template.pdf" download>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download"
+             viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+        </svg>
+        CV
+    </a>
+    <span class="icon" aria-label="Menu" onclick="toggleMenu()">
+        &#9776;
+    </span>
+    <span id="pwa" class="btn addToHomeScreen"
+          style="display: none" onclick="installApp()">Install</span>
+</nav>
+
+<!--Header-->
+<header class="header">
+    <h1>Web Development</h1>
+    <p>Personal notebooks</p>
+    <p>Front-end &</p>
+    <p>Back-end</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+         class="bi bi-arrow-down bounce-in-top" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+    </svg>
+</header>
+
+<!--Header Separator-->
+<svg style="background-color:#fff;" width="100%" height="70" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path id="wavepath" d="M0,0  L110,0C35,150 35,0 0,100z" fill="#272727"></path>
+</svg>
+
+<!--Tutorials-->
+<main class="tutorials">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hdd"
+         viewBox="0 0 16 16">
+        <path d="M4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM3 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+        <path d="M16 11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9.51c0-.418.105-.83.305-1.197l2.472-4.531A1.5 1.5 0 0 1 4.094 3h7.812a1.5 1.5 0 0 1 1.317.782l2.472 4.53c.2.368.305.78.305 1.198V11zM3.655 4.26 1.592 8.043C1.724 8.014 1.86 8 2 8h12c.14 0 .276.014.408.042L12.345 4.26a.5.5 0 0 0-.439-.26H4.094a.5.5 0 0 0-.44.26zM1 10v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/>
+    </svg>
+    <h2>Back-end</h2>
+    <div class="tutorials-content">
+        <div class="row">
+            <div class="column">
+                <a href="/tutorial/zsh">
+                    <div class="card">
+                        <h3>Zsh</h3>
+                        <span class="star">★★★☆☆</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="column">
+                <a href="/tutorial/go">
+                    <div class="card">
+                        <h3>Golang</h3>
+                        <span class="star">★★☆☆☆</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>SQLite3</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>BoltDB</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>Authentication</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>Ecommerce & Blog</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>Debian</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>Scalability</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display"
+         viewBox="0 0 16 16">
+        <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
+    </svg>
+    <h2>Front-end</h2>
+    <div class="tutorials-content">
+        <div class="row">
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>HTML</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>CSS</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>JS</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>SEO</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>Marketing</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>PWA</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card todo" onclick="showToast()">
+                    <h3>Design Theory</h3>
+                    <span class="star">☆☆☆☆☆</span>
+                </div>
+            </div>
+
+            <!--            <div class="column">-->
+            <!--                <div class="card todo" onclick="showToast()">-->
+            <!--                    <h3>SEO</h3>-->
+            <!--                    <span class="star">☆☆☆☆☆</span>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</main>
+
+<!--Tutorials Separator-->
+<svg style="background-color: #272727;" width="100%" height="70" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path id="wavepath" d="M0,0  L110,0C35,150 35,0 0,100z" fill="#fff"></path>
+</svg>
+
+<!--Quotes-->
+<div class="slideshow-container">
+
+    <div class="mySlides">
+        <q>First, solve the problem. Then, write the code.</q>
+        <p class="author">John Johnson</p>
+    </div>
+
+    <div class="mySlides">
+        <q>Complexity is multiplicative</q>
+        <p class="author">Rob Pike</p>
+    </div>
+
+    <div class="mySlides">
+        <q>Simplicity is the key to good software</q>
+        <p class="author">The Go Programming</p>
+    </div>
+
+    <div class="mySlides">
+        <q>If your website was more efficient, you wouldn't have to waste even more time transmitting and running
+            animations to run while we wait for operations to complete.</q>
+        <p class="author">Rob Pike</p>
+    </div>
+
+    <div class="mySlides">
+        <q>The first rule of computer security, don't buy a computer. The second rule, if you buy one, don't turn it
+            on.</q>
+        <p class="author">Dark Avenger</p>
+    </div>
+
+    <span class="prev" onclick="plusSlides(-1)">❮</span>
+    <span class="next" onclick="plusSlides(1)">❯</span>
+
+</div>
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<!--Toast-->
+<div id="snackbar">Work in progres..</div>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        //register the service worker
+        navigator.serviceWorker.register('sw.js').then(function (result) {
+            console.log('Service Worker Registered');
+            console.log('Scope: ' + result.scope);
+        }, function (error) {
+            console.log('Service Worker Regiatration Failed');
+            console.log(error);
+        });
+    } else {
+        console.log('Service Workers Not Supported');
+    }
+
+    var installEvt;
+    window.addEventListener('beforeinstallprompt', function (evt) {
+        console.log('Before Install Prompt');
+        installEvt = evt;
+        evt.preventDefault(); // prevent automatically showing add to HomeScreen
+        hideOrShowInstallButton("block")
+    });
+
+    function hideOrShowInstallButton(displayValue) {
+        elements = document.getElementsByClassName('addToHomeScreen');
+
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.display = displayValue;
+        }
+    }
+
+    function installApp() {
+        hideOrShowInstallButton("none");
+        installEvt.prompt();
+        installEvt.userChoice.then(function (result) {
+            if (result.outcome === 'accepted')
+                console.log('App Installed');
+            else
+                console.log('App Not Installed');
+        });
+    }
+
+    window.addEventListener('appinstalled', function (evt) {
+        console.log('App Installed Event');
+    });
+</script>
+
+</body>
+</html>

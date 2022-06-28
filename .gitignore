@@ -1,0 +1,8 @@
+# For localhost
+localhost+2.pem
+localhost+2-key.pem
+staticserver-windows-amd64.exe
+mkcert-windows-amd64.exe
+.idea
+_localhost
+_src_tutorials

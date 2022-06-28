@@ -1,0 +1,805 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Golang</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Golang tutorial. From variables to web servers step by step.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="introduction/installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="introduction/setup.html"><strong aria-hidden="true">3.</strong> Setup</a></li><li class="chapter-item expanded "><a href="introduction/hello-world.html"><strong aria-hidden="true">4.</strong> Hello World</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction/read-explanation.html"><strong aria-hidden="true">4.1.</strong> Read example</a></li></ol></li><li class="chapter-item expanded "><a href="introduction/comments.html"><strong aria-hidden="true">5.</strong> Comments</a></li><li class="chapter-item expanded "><a href="introduction/go-commands.html"><strong aria-hidden="true">6.</strong> Go commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Example</li><li class="chapter-item expanded "><a href="introduction/simple-program.html"><strong aria-hidden="true">7.</strong> Simple Program</a></li><li class="chapter-item expanded affix "><li class="part-title">Go Syntax</li><li class="chapter-item expanded "><a href="syntax/variables.html"><strong aria-hidden="true">8.</strong> Variables</a></li><li class="chapter-item expanded "><a href="syntax/scope.html"><strong aria-hidden="true">9.</strong> Scope</a></li><li class="chapter-item expanded "><a href="data-types/index.html"><strong aria-hidden="true">10.</strong> Data Types</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> Basic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> Composite</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> Reference</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.4.</strong> Interfaces</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> OOP</div></li><li class="chapter-item expanded affix "><li class="part-title">Concurrency</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Goroutine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Channels</div></li><li class="chapter-item expanded affix "><li class="part-title">Testing</li><li class="chapter-item expanded affix "><li class="part-title">Benchmarking</li><li class="chapter-item expanded affix "><li class="part-title">Standard Library</li><li class="chapter-item expanded affix "><li class="part-title">Security</li><li class="chapter-item expanded affix "><li class="part-title">Web Development</li><li class="chapter-item expanded affix "><li class="part-title">Deployment</li><li class="chapter-item expanded affix "><li class="part-title">Command-Line Applications</li><li class="chapter-item expanded affix "><li class="part-title">Desktop Applications</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button class="icon-button" type="button" title="Home" aria-label="Home" aria-expanded="false">
+                            <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Golang</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<blockquote>
+<p>★★☆☆☆ These notes need more examples to make the topic clear</p>
+</blockquote>
+<p>Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.</p>
+<p>Go was released in 2019 and was designed by:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Rob_Pike">Rob Pike</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Robert_Griesemer">Robert Griesemer</a></li>
+</ul>
+<h2 id="go-features"><a class="header" href="#go-features">Go Features</a></h2>
+<ul>
+<li>statically types</li>
+<li>compiled language</li>
+<li>fast compiler</li>
+<li>garbage collection (GC)</li>
+<li>concurrency support</li>
+<li>structural typing</li>
+<li>standard library</li>
+<li>it's a general purpose language</li>
+<li>amazing readability</li>
+<li>makes hard problems simple</li>
+<li>runs on Windows, Unix (like Linux, Mac) and Plan 9</li>
+</ul>
+<h2 id="go-in-real-life"><a class="header" href="#go-in-real-life">Go in real life</a></h2>
+<p>Go is one of the fastest languages with a garbage collection and utilize less memory than most. </p>
+<p><img src="img/cpu-bench.png" alt="Go Benchmark" /></p>
+<p>Also, Go is great for web development. A Few languages are faster than Go.</p>
+<p><img src="img/web-bench.png" alt="Go Web Benchmark" /></p>
+<p>More benchmarks can be seen at this links:</p>
+<ul>
+<li><a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/box-plot-summary-charts.html">benchmarksgame</a></li>
+<li><a href="https://www.techempower.com/benchmarks/#section=data-r20&amp;hw=ph&amp;test=composite">techempower</a></li>
+</ul>
+<blockquote>
+<p>The best source for more information about Go can be found at <a href="https://go.dev/">go.dev</a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>Go installer can be downloaded from <a href="https://go.dev/doc/install">here</a>, then follow the instructions present at the link or read the instructions below.</p>
+<h2 id="windows-installation"><a class="header" href="#windows-installation">Windows installation</a></h2>
+<ol>
+<li>Open the MSI file you downloaded and follow the prompts to install Go</li>
+<li>Verify that you've installed Go:
+<ul>
+<li>In Windows, click the Start menu.</li>
+<li>In the menu's search box, type cmd, then press the Enter key.</li>
+<li>In the Command Prompt window that appears, type the following command:</li>
+<li><code>go version</code></li>
+</ul>
+</li>
+<li>Confirm that the command prints the installed version of Go.</li>
+</ol>
+<h4 id="update-go-on-windows"><a class="header" href="#update-go-on-windows">Update Go on Windows</a></h4>
+<ol>
+<li>Download again the latest version of the Go installer from <a href="https://go.dev/doc/install">here</a>.</li>
+<li>Repeat the steps from Windows Installation </li>
+</ol>
+<h2 id="linux-installation"><a class="header" href="#linux-installation">Linux installation</a></h2>
+<ol>
+<li>
+<p>Open a terminal where you downloaded the Go installer.</p>
+</li>
+<li>
+<p>Extract Go with:</p>
+<pre><code class="language-bash">tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+</code></pre>
+<blockquote>
+<p>If you get errors, then run command with <strong>sudo</strong>:</p>
+</blockquote>
+<pre><code class="language-bash">sudo tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+</code></pre>
+</li>
+<li>
+<p>Add <code>/usr/local/go/bin</code> to the PATH environment variable. </p>
+<ul>
+<li>open <code>~/.bashrc</code> or <code>~/.zshrc</code></li>
+<li>add to the file the following:</li>
+</ul>
+<pre><code class="language-bash">export PATH=$PATH:/usr/local/go/bin
+</code></pre>
+</li>
+</ol>
+<h4 id="update-go-on-linux"><a class="header" href="#update-go-on-linux">Update Go on Linux</a></h4>
+<ol>
+<li>
+<p>Download again the latest version of the Go installer from <a href="https://go.dev/doc/install">here</a>.</p>
+</li>
+<li>
+<p>Open a terminal where you downloaded the Go installer and paste:</p>
+<pre><code class="language-bash">rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+</code></pre>
+<blockquote>
+<p>If you get errors, then run command with sudo:</p>
+</blockquote>
+<pre><code class="language-bash">sudo rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+</code></pre>
+</li>
+</ol>
+<h2 id="mac-installation"><a class="header" href="#mac-installation">Mac installation</a></h2>
+<ol>
+<li>
+<p>Open the package file you downloaded and follow the prompts to install Go.</p>
+<p>The package installs the Go distribution to <code>/usr/local/go</code>. The package should put the /usr/local/go/bin directory in your PATH environment variable. You may need to restart any open Terminal sessions for the change to take effect.</p>
+</li>
+<li>
+<p>Verify that you've installed Go by opening a command prompt and typing the following command:</p>
+<pre><code class="language-bash">go version
+</code></pre>
+</li>
+<li>
+<p>Confirm that the command prints the installed version of Go.</p>
+</li>
+</ol>
+<h4 id="update-go-on-mac"><a class="header" href="#update-go-on-mac">Update Go on Mac</a></h4>
+<ol>
+<li>Download again the latest version of the Go installer from <a href="https://go.dev/doc/install">here</a>.</li>
+<li>Repeat the steps from Mac installation</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setup"><a class="header" href="#setup">Setup</a></h1>
+<p>Before writing Go code, a code editor is needed. Also, a good terminal setup is very helpful.</p>
+<h2 id="code-editor"><a class="header" href="#code-editor">Code Editor</a></h2>
+<p>For writing Go code, there are two good code editors:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/">VS Code</a>: free
+<img src="introduction/../img/completion-signature-help.gif" alt="VS Code" /></li>
+<li><a href="https://www.jetbrains.com/go/">Goland</a>: free trial for one month
+<img src="introduction/../img/go_implement_type.gif" alt="VS Code" /></li>
+</ul>
+<p>If you don't know which to choose, try both. Especially try the keyboard shortcuts and code snippets to have a feeling of which you prefer.</p>
+<h2 id="terminal"><a class="header" href="#terminal">Terminal</a></h2>
+<p>When writing Go code, some commands or some output will need a terminal. If you use <a href="https://www.jetbrains.com/go/">Goland</a> this is less important but still it's a good idea to invest in a good terminal setup.</p>
+<p>Here is a <a href="introduction//tutorial/zsh/introduction/ohmyzsh.html">tutorial</a> on how to setup <code>oh-my-zsh</code> and some plugins on <code>Linux</code> and <code>Mac</code>.</p>
+<p>For <code>Windows</code>, the same setup can be achieved, but first <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL</a> must be installed.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
+<p>Finally, let's write some Go code.</p>
+<h2 id="hello-world-with-module"><a class="header" href="#hello-world-with-module">Hello World with module</a></h2>
+<ol>
+<li>
+<p>Create a directory.</p>
+<pre><code class="language-bash">mkdir hello
+cd hello
+</code></pre>
+</li>
+<li>
+<p>Enable dependency tracking</p>
+<pre><code class="language-bash">go mod init hello
+</code></pre>
+</li>
+<li>
+<p>Open the folder in your code editor</p>
+</li>
+<li>
+<p>Create a file <code>hello.go</code> with the following content:</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main() {
+   fmt.Println(&quot;Hello, World!&quot;)
+}
+</code></pre>
+</li>
+<li>
+<p>Run the code.</p>
+<pre><code class="language-bash">go run . 
+# Hello, World!
+</code></pre>
+</li>
+<li>
+<p>We can also create an executable.</p>
+<pre><code class="language-bash">go build
+./hello
+# Hello, World!
+</code></pre>
+<p><code>go run .</code>, runs the project without creating an executable. In the example above <code>go build</code> creates the executable <code>hello</code> for Unix and <code>hello.exe</code> for Windows. On Unix we run the executable at the terminal by typing <code>./hello</code> and on Windows we type <code>.\hello.exe</code>.</p>
+</li>
+</ol>
+<h2 id="hello-world-with-gopath"><a class="header" href="#hello-world-with-gopath">Hello World with GOPATH</a></h2>
+<p>This is the old way of writing Go code. If you are interested, <a href="https://go.dev/doc/gopath_code">here</a> is a good tutorial.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-read-the-example"><a class="header" href="#how-to-read-the-example">How to read the example</a></h1>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+)
+
+func main() {
+	fmt.Println(&quot;Hello, World!&quot;)
+}
+</code></pre>
+<ul>
+<li>
+<p><code>package main</code> defines a standalone executable. It is known as <code>package declaration</code>, and every program must start with it. Packages are used to organize code. Packages create two types of programs: <code>executables</code> and <code>libraries</code>.</p>
+<p>The example showed is an executable because starts with <code>package main</code>.
+Executable programs can run directly, like the <code>.exe</code> programs on Windows.</p>
+</li>
+<li>
+<p><code>import &quot;fmt&quot;</code> imports the <code>fmt</code> package from the standard library. The <code>fmt</code> package is a library that contains collections of code packed under <code>package &quot;fmt&quot;</code>. When importing a single package, <code>import</code> is always followed by double quotes that can hold a sequence of characters. Multiple packages can be imported by adding two parentheses:</p>
+<pre><code class="language-go">import (
+  &quot;fmt&quot;
+  &quot;log&quot;
+)  
+</code></pre>
+<p>The package <code>fmt</code> contains this functions:</p>
+<pre><code class="language-go">func Errorf(format string, a ...any) error
+func Fprint(w io.Writer, a ...any) (n int, err error)
+func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
+func Fprintln(w io.Writer, a ...any) (n int, err error)
+func Fscan(r io.Reader, a ...any) (n int, err error)
+func Fscanf(r io.Reader, format string, a ...any) (n int, err error)
+func Fscanln(r io.Reader, a ...any) (n int, err error)
+func Print(a ...any) (n int, err error)
+func Printf(format string, a ...any) (n int, err error)
+func Println(a ...any) (n int, err error)
+func Scan(a ...any) (n int, err error)
+func Scanf(format string, a ...any) (n int, err error)
+func Scanln(a ...any) (n int, err error)
+func Sprint(a ...any) string
+func Sprintf(format string, a ...any) string
+func Sprintln(a ...any) string
+func Sscan(str string, a ...any) (n int, err error)
+func Sscanf(str string, format string, a ...any) (n int, err error)
+func Sscanln(str string, a ...any) (n int, err error)
+type Formatter interface{ ... }
+type GoStringer interface{ ... }
+type ScanState interface{ ... }
+type Scanner interface{ ... }
+type State interface{ ... }
+type Stringer interface{ ... }
+</code></pre>
+</li>
+<li>
+<p><code>func main()</code> is the entry point of the executable. It is a function that gets called when the program is executed.</p>
+</li>
+<li>
+<p><code>Println()</code> is another function, from the <code>fmt</code> package, that display the message at the terminal. </p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="comments"><a class="header" href="#comments">Comments</a></h1>
+<p><strong>Comments</strong> are a great way for the developer to document the code. There are different types of comments. Comments are
+ignored by the compiler.</p>
+<h2 id="single-line-comment"><a class="header" href="#single-line-comment">Single line comment</a></h2>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main() {
+	// this is a single line comment
+	// the line below prints ciao. 
+	// code must be readable with clear names
+	// in this case all these comments are not useful. 
+	// they are shown just as an example
+	fmt.Println(&quot;Ciao&quot;)
+}
+</code></pre>
+<h2 id="multi-line-comment"><a class="header" href="#multi-line-comment">Multi line comment</a></h2>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main() {
+	/*
+		this is a multi line comment
+		the line below prints ciao.
+		code must be readable with clear names
+		in this case all these comments are not useful.
+		they are shown just as an example
+	*/
+	fmt.Println(&quot;Ciao&quot;)
+}
+</code></pre>
+<h2 id="package-comment"><a class="header" href="#package-comment">Package comment</a></h2>
+<pre><code class="language-go">// Copyright 2009 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+/*
+	Package fmt implements formatted I/O with functions analogous
+	to C's printf and scanf.  The format 'verbs' are derived from C's but
+	are simpler.
+
+
+	Printing
+
+	The verbs:
+
+	General:
+		%v	the value in a default format
+			when printing structs, the plus flag (%+v) adds field names
+		%#v	a Go-syntax representation of the value
+		%T	a Go-syntax representation of the type of the value
+		%%	a literal percent sign; consumes no value
+
+    ...
+
+*/
+package fmt
+</code></pre>
+<p>A <code>package</code> comment can be created with <code>//</code> or <code>/**/</code>.
+The package comment bust be placed above the <code>package declaration</code> and is useful for documenting the code.</p>
+<h2 id="documentation"><a class="header" href="#documentation">Documentation</a></h2>
+<blockquote>
+<p>Comments placed above functions or packages will be used as documentatio for tools like VS Code, Goland and <code>go doc</code>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="go-commands"><a class="header" href="#go-commands">Go commands</a></h1>
+<p>Use <code>go help</code> to retrieve the list of all Go commands.</p>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<pre><code class="language-bash">go &lt;command&gt; [arguments]
+</code></pre>
+<h2 id="commands"><a class="header" href="#commands">Commands</a></h2>
+<pre><code class="language-bash">bug         start a bug report
+build       compile packages and dependencies
+clean       remove object files and cached files
+doc         show documentation for package or symbol
+env         print Go environment information
+fix         update packages to use new APIs
+fmt         gofmt (reformat) package sources
+generate    generate Go files by processing source
+get         add dependencies to current module and install them
+install     compile and install packages and dependencies
+list        list packages or modules
+mod         module maintenance
+work        workspace maintenance
+run         compile and run Go program
+test        test packages
+tool        run specified go tool
+version     print Go version
+vet         report likely mistakes in packages
+</code></pre>
+<blockquote>
+<p>Use <code>&quot;go help &lt;command&gt;&quot;</code> for more information about a command.</p>
+</blockquote>
+<h2 id="additional-help-topics"><a class="header" href="#additional-help-topics">Additional help topics</a></h2>
+<pre><code class="language-bash">buildconstraint build constraints
+buildmode       build modes
+c               calling between Go and C
+cache           build and test caching
+environment     environment variables
+filetype        file types
+go.mod          the go.mod file
+gopath          GOPATH environment variable
+gopath-get      legacy GOPATH go get
+goproxy         module proxy protocol
+importpath      import path syntax
+modules         modules, module versions, and more
+module-get      module-aware go get
+module-auth     module authentication using go.sum
+packages        package lists and patterns
+private         configuration for downloading non-public code
+testflag        testing flags
+testfunc        testing functions
+vcs             controlling version control with GOVCS
+</code></pre>
+<blockquote>
+<p>Use <code>&quot;go help &lt;topic&gt;&quot;</code> for more information about that topic.</p>
+</blockquote>
+<p>For more information and examples, check this <a href="https://pkg.go.dev/cmd/go">link</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="simple-program"><a class="header" href="#simple-program">Simple program</a></h1>
+<p>Go programs are made from packages. Here is a simple program with one package, that shows how to create a package, how to use it and how to test it's functionality.</p>
+<p>The program has the following structure:</p>
+<pre><code class="language-bash">├── ciao
+│   ├── ciao.go
+│   └── ciao_test.go
+├── go.mod
+└── main.go
+</code></pre>
+<p>At the terminal type the following lines one by one:</p>
+<pre><code class="language-bash">cd # move into home directory
+mkdir tutorial
+cd tutorial
+go mod init tutorial
+</code></pre>
+<p>Open in your code editor the <code>tutorial</code> folder, create the other files and copy the code for the files, listed below.</p>
+<h4 id="ciaociaogo"><a class="header" href="#ciaociaogo">ciao/ciao.go</a></h4>
+<pre><code class="language-go">package ciao
+
+import &quot;fmt&quot;
+
+func Ciao(name string) string {
+	return fmt.Sprintf(&quot;Ciao %s&quot;, name)
+}
+</code></pre>
+<h4 id="ciaociao_testgo"><a class="header" href="#ciaociao_testgo">ciao/ciao_test.go</a></h4>
+<pre><code class="language-go">package ciao
+
+import &quot;testing&quot;
+
+func TestCiao(t *testing.T) {
+	type args struct {
+		name string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{name: &quot;Name&quot;, args: args{name: &quot;Gopher&quot;}, want: &quot;Ciao Gopher&quot;},
+		{name: &quot;Emoji&quot;, args: args{name: &quot;😀&quot;}, want: &quot;Ciao 😀&quot;},
+		{name: &quot;China&quot;, args: args{name: &quot;普里騰&quot;}, want: &quot;Ciao 普里騰&quot;},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Ciao(tt.args.name); got != tt.want {
+				t.Errorf(&quot;Ciao() = %v, want %v&quot;, got, tt.want)
+			}
+		})
+	}
+}
+</code></pre>
+<h4 id="maingo"><a class="header" href="#maingo">main.go</a></h4>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;tutorial/ciao&quot;
+)
+
+func main() {
+	c := ciao.Ciao(&quot;Gopher&quot;)
+	fmt.Println(c)
+}
+</code></pre>
+<h2 id="run-project"><a class="header" href="#run-project">Run project</a></h2>
+<pre><code class="language-bash">go run .
+# Ciao Gopher
+</code></pre>
+<h2 id="run-test"><a class="header" href="#run-test">Run Test</a></h2>
+<pre><code class="language-go">go test ./ciao
+# ok  	tutorial/go/ciao	0.003s
+</code></pre>
+<p>The tests succeed because strings in Go are encoded as utf-8 by default. Knowing this, the tests are redundant but are shown as an example.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<p>A variable is a name given to an address in memory that holds a value.</p>
+<h2 id="define-a-variable"><a class="header" href="#define-a-variable">Define a variable</a></h2>
+<pre><code class="language-go">var val int64 = 10
+</code></pre>
+<p>A variable is defined with the word <code>var</code> followed by a name and type. <code>val</code> and <code>int</code> are the name and type chosen, for this example. The type tells
+the compiler how much memory to ask the Operating System to reserve.</p>
+<p>The variable <code>val</code> is made by to important values: <code>lvalue</code> and <code>rvalue</code>.</p>
+<p><img src="syntax/../img/variable2.png" alt="Variable" /></p>
+<p>The <code>val</code> variable starts in memory at 625 and because it's an <code>int</code> will occupy 8 bytes on a <code>64-bit</code> machine. So, the variable starts in memory at <code>625</code> and ends at <code>633</code>.</p>
+<p>The <code>10</code> represent the value that it stores at the 8 byte (<code>int64</code>) address and in a <code>64-bit</code> machine is saved in this format:</p>
+<pre><code class="language-go">0000 0000 0000 0000
+0000 0000 0000 0000
+0000 0000 0000 0000
+0000 0000 0000 1010
+</code></pre>
+<h2 id="lvalue-and-rvalue"><a class="header" href="#lvalue-and-rvalue">lvalue and rvalue</a></h2>
+<ul>
+<li><code>lvalue</code>: called left value or location value is the starting memory address at which a variable is stored. For example, an int is stored from memory address <code>625</code>.</li>
+<li><code>rvalue</code>: is what is stored at the <code>lvalue</code>. In Go you can assume that the <code>rvalue</code> will have the default value of the type, which for int is <code>0</code>. In our example we assigned <code>10</code> for the <code>rvalue</code> but we can also define a variable without assigning a value.
+<pre><code class="language-go">// val rvalue is 0
+var val int64
+</code></pre>
+</li>
+</ul>
+<h2 id="define-vs-declare"><a class="header" href="#define-vs-declare">define vs declare</a></h2>
+<ul>
+<li><code>define</code>: variable exists in the symbolic table (compiler table of each variable of our program) and has a <code>lvalue</code></li>
+<li><code>declare</code>: variable exists in the symbolic table but has no <code>lvalue</code>. The <code>lvalue</code> represent the random bits that exist at the given time in the memory address at which the variable points.</li>
+</ul>
+<blockquote>
+<p>In Go every variable is initialized with the default value of the type and there isn't the risk of a variable that is only declared and points to random bits in memory.</p>
+</blockquote>
+<h2 id="multiple-ways-to-define-a-variaable"><a class="header" href="#multiple-ways-to-define-a-variaable">Multiple ways to define a variaable.</a></h2>
+<pre><code class="language-go">package main
+
+func main() {
+	var age int                   // define without initialization
+	var age2 int = 42             // define with initialization
+	var age3, age4 int = 42, 1302 // define/init multiple vars at once
+	var age5 = 42                 // type omitted, will be inferred
+	age6 := 42                    // shorthand, only in func bodies, implicit type
+	const name = &quot;Gopher&quot;         // value cannot be changed
+}
+</code></pre>
+<blockquote>
+<p><code>int</code> storage capacity depends on what machine you have. On a 64-bit machine <code>int</code> storage is 64 bits and on a 32-bit machine<code>int</code> storage is 32 bits. There are also <code>int64</code> and <code>int32</code> but usually <code>int</code> is the type used more.</p>
+</blockquote>
+<h2 id="const-vs-var"><a class="header" href="#const-vs-var">const vs var</a></h2>
+<p>The difference between constants and variables is that the variables value can be changed while constants value is defined once and cannot be changed after that.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scope"><a class="header" href="#scope">Scope</a></h1>
+<p>When creating a Go entity like a variables or a function,
+the compiler assigns different attributes to the entity like its starting memory address. Another attribute assigned by the compiler to the entity is its scope.</p>
+<p><img src="syntax/../img/symbol-table.png" alt="Symbol Table" /></p>
+<p>The scope is a region of the program where a defined entity can exist.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p><strong>scope.go</strong></p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;syntax/scope/hello&quot;
+)
+
+var x string = &quot;Hello from global scope&quot;
+
+func init() {
+	var a string = &quot;Hello from block scope&quot;
+	fmt.Println(&quot;scope.go&quot;, a)
+	fmt.Println(&quot;scope.go&quot;, x)
+	fmt.Println(&quot;scope.go&quot;, hello.X)
+}
+
+func main() {
+	var y string = &quot;Hello from block scope&quot;
+	fmt.Println(&quot;scope.go&quot;, x)
+	fmt.Println(&quot;scope.go&quot;, y)
+	// fmt.Println(&quot;scope.go&quot; ,a) // error undefined, available only for init block
+	fmt.Println(&quot;scope.go&quot;, hello.X)
+	// fmt.Println(&quot;scope.go&quot; ,hello.z) // error undefined, not available
+}
+</code></pre>
+<p><strong>scope2.go</strong></p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func init() {
+	fmt.Println(&quot;scope2.go&quot;, x)
+}
+</code></pre>
+<p><strong>hello/hello.go</strong></p>
+<pre><code class="language-go">package hello
+
+import &quot;fmt&quot;
+
+// X is capitalized
+// is available to main.go
+var X string = &quot;Hello from project scope&quot;
+
+// z is not capitalized
+// z is not available to main.go
+var z string = &quot;Hello from package scope&quot;
+
+func init() {
+	fmt.Println(&quot;hello.go&quot;, z)
+}
+</code></pre>
+<p><strong>hello/hello2.go</strong></p>
+<pre><code class="language-go">package hello
+
+import &quot;fmt&quot;
+
+func init() {
+	fmt.Println(&quot;hello2.go&quot;, X) // from hello.go
+	fmt.Println(&quot;hello2.go&quot;, z) // from hello.go
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code class="language-bash">hello.go Hello from package scope
+hello2.go Hello from project scope
+hello2.go Hello from package scope
+scope.go Hello from block scope
+scope.go Hello from global scope
+scope.go Hello from project scope
+scope2.go Hello from global scope
+scope.go Hello from global scope
+scope.go Hello from block scope
+scope.go Hello from project scope
+</code></pre>
+<ul>
+<li><code>init()</code> is a function that is triggered before <code>main()</code> starts but after the variables are defined.</li>
+<li>a scope can be large or small, and his visibility is decided by capitalizing the first letter of an entity like <code>X</code> in <code>hello.go</code></li>
+</ul>
+<h2 id="block-scope"><a class="header" href="#block-scope">Block scope</a></h2>
+<pre><code class="language-go">func main() {
+    {
+        v := 1
+        {
+            fmt.Println(v)
+            {
+                fmt.Println(v)
+            }
+        }
+        fmt.Println(v)
+    }
+}
+</code></pre>
+<pre><code class="language-go">1
+1
+1
+</code></pre>
+<h2 id="shadowing-scope"><a class="header" href="#shadowing-scope">Shadowing scope</a></h2>
+<pre><code class="language-go">v := &quot;outer&quot;
+fmt.Println(v)
+{
+    v := &quot;inner&quot;
+    fmt.Println(v)
+    {
+        fmt.Println(v)
+    }
+}
+{
+    fmt.Println(v)
+}
+fmt.Println(v)
+</code></pre>
+<pre><code class="language-go">outer
+inner
+inner
+outer
+outer
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-types"><a class="header" href="#data-types">Data Types</a></h1>
+<p>Go has four categories of data types:</p>
+<ul>
+<li>Basic Types</li>
+<li>Aggregate Types</li>
+<li>Reference Types</li>
+<li>Interface Types</li>
+</ul>
+<h2 id="basic-types"><a class="header" href="#basic-types">Basic Types</a></h2>
+<ul>
+<li>numbers</li>
+<li>strings</li>
+<li>booleans</li>
+</ul>
+<h2 id="aggregate-types"><a class="header" href="#aggregate-types">Aggregate Types</a></h2>
+<ul>
+<li>arrays</li>
+<li>structs</li>
+</ul>
+<h2 id="reference-types"><a class="header" href="#reference-types">Reference Types</a></h2>
+<ul>
+<li>pointers</li>
+<li>slices</li>
+<li>maps</li>
+<li>functions</li>
+<li>channels</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
