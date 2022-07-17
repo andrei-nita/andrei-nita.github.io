@@ -502,6 +502,8 @@ header svg {
   padding: 40px 20px;
   text-align: center;
   color: #272727;
+  max-width: 980px;
+  margin: 0 auto;
 }
 .tutorials h2 {
   font-size: 30px;
