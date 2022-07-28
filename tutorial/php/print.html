@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>PHP</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="PHP tutorial. ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Get Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/docker.html"><strong aria-hidden="true">1.1.</strong> Docker</a></li><li class="chapter-item expanded "><a href="installation/xampp.html"><strong aria-hidden="true">1.2.</strong> XAMPP</a></li></ol></li><li class="chapter-item expanded "><a href="installation/hello-world.html"><strong aria-hidden="true">2.</strong> Hello World</a></li><li class="chapter-item expanded affix "><li class="part-title">PHP Syntax</li><li class="chapter-item expanded "><a href="syntax/variables.html"><strong aria-hidden="true">3.</strong> Variables</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Constants</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Pointers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Scope</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Arithmetic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> Integers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> Floats</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> Booleans</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.4.</strong> Strings</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.4.1.</strong> Multiline</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.4.2.</strong> Concatenation</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.5.</strong> Arrays</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.6.</strong> null</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.7.</strong> Objects</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Type Casting</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Loops</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> foreach</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> for</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> while</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Logic</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">11.1.</strong> Operators</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> if</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> switch</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.4.</strong> ternary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Functions</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">12.1.</strong> continue</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.2.</strong> break</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> arguments</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.4.</strong> defaults</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.5.</strong> returns</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.6.</strong> scope</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Errors</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Classes</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">14.1.</strong> Instances</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.2.</strong> Constructs</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.3.</strong> Properties</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.4.</strong> Methods</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.5.</strong> Inheritance</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.6.</strong> Visibility</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.7.</strong> Constants</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.8.</strong> Parent</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.9.</strong> Cloning</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.10.</strong> Static_modifiers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.11.</strong> Late Static Binding</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.12.</strong> Comparison</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.13.</strong> Autoload</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Traits</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Includes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Namespaces</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Magic Constants</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Debugging</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">19.1.</strong> phpinfo</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Testing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Documenting Code</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Dependency Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">23.</strong> Date and Time</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">24.</strong> Files</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">25.</strong> Asynchronous Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">26.</strong> Multithreading</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">27.</strong> Security</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">28.</strong> Performance</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button class="icon-button" type="button" title="Home" aria-label="Home" aria-expanded="false">
+                            <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PHP</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <blockquote>
+<p>★★☆☆☆ These notes need more examples to make the topic clear</p>
+</blockquote>
+<h1 id="php"><a class="header" href="#php">PHP</a></h1>
+<p><strong>PHP</strong> (Hypertext Preprocessor) is an open source scripting language that runs on a server. It's used for web
+development and power systems like <a href="https://wordpress.org/">WordPress</a> and <a href="https://www.drupal.org/">Drupal</a>.</p>
+<h2 id="code-editors"><a class="header" href="#code-editors">Code Editors</a></h2>
+<p>To use and edit <code>PHP</code> install one of the following code editors:</p>
+<ul>
+<li><a href="https://www.jetbrains.com/phpstorm/">PHPStorm</a></li>
+<li><a href="https://www.sublimetext.com/">Sublime Text</a></li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+</ul>
+<h2 id="php-requirements"><a class="header" href="#php-requirements">PHP Requirements</a></h2>
+<p>In order to use <code>PHP</code> for web development, the following tools are necessary:</p>
+<ul>
+<li>a server like <a href="https://www.apache.org/">Apache</a> or <a href="https://nginx.org/">nginx</a></li>
+<li>a database like <a href="https://www.mysql.com/">MySQL</a> or <a href="https://mariadb.org/">Maria</a></li>
+<li>the <a href="https://www.php.net/">PHP</a> interpreter``</li>
+</ul>
+<p>In the following sections, we will show you how to install and use <code>PHP</code> with <code>Docker</code> or <code>XAMPP</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="docker"><a class="header" href="#docker">Docker</a></h1>
+<p><strong>Docker</strong> is a tool that can be configured to run a <code>PHP</code> environment in a container. A container can be seen as a
+virtual machine but lighter. The main advantage of using <code>Docker</code> locally is that everything is self-contained and the
+website can be moved to the production server easily.</p>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<ul>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://www.docker.com/">Docker</a></li>
+</ul>
+<h2 id="details"><a class="header" href="#details">Details</a></h2>
+<p>The following versions are used.</p>
+<ul>
+<li>PHP 8.1 with PDO</li>
+<li>Nginx latest</li>
+<li>Mysql latest</li>
+</ul>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<p>To create a <code>PHP</code> environment follow the following steps:</p>
+<h3 id="clone-repository"><a class="header" href="#clone-repository">Clone repository.</a></h3>
+<pre><code class="language-bash">git clone https://github.com/andrei-nita/docker-lemp lemp01
+</code></pre>
+<h3 id="configuration"><a class="header" href="#configuration">Configuration</a></h3>
+<p>Change credentials form the <code>.env</code> file.</p>
+<h3 id="start-the-server"><a class="header" href="#start-the-server">Start the server</a></h3>
+<p>Start the server using the following command inside <code>lemp01</code>:</p>
+<pre><code class="language-bash">docker-compose up
+</code></pre>
+<p>or use the following command to start the server in detached mode:</p>
+<pre><code class="language-bash">docker-compose up -d
+</code></pre>
+<h3 id="create-table"><a class="header" href="#create-table">Create table</a></h3>
+<p>Navigate to phpmyadmin at <a href="http://localhost:8081">http://localhost:8081</a>.</p>
+<p>Create a table named <code>db_tbl</code>. This table is used in <code>app/index.php</code>.</p>
+<p>Populate the table with two colums: <code>id</code> and <code>title</code>.</p>
+<h3 id="run-the-application"><a class="header" href="#run-the-application">Run the application</a></h3>
+<p>Navigate to <a href="http://localhost">http://localhost</a></p>
+<h3 id="code"><a class="header" href="#code">Code</a></h3>
+<p>Place your code inside the <code>app</code> folder.</p>
+<h3 id="stop-containers"><a class="header" href="#stop-containers">Stop containers</a></h3>
+<p>Use <code>CTRL+C</code> to stop the Docker containers or if you used <code>docker-compose up -d</code>, use the following command:</p>
+<pre><code class="language-bash">docker-compose stop
+</code></pre>
+<h3 id="remove-containers"><a class="header" href="#remove-containers">Remove containers</a></h3>
+<pre><code class="language-bash">docker-compose down
+</code></pre>
+<h2 id="more"><a class="header" href="#more">More</a></h2>
+<ul>
+<li>for <code>docker-compose</code> documentation visit <a href="https://docs.docker.com/compose/reference/">this link</a>.</li>
+<li>other sample projects can be found <a href="https://github.com/docker/awesome-compose/">here</a>
+and <a href="https://docs.docker.com/samples/">here</a>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="xampp"><a class="header" href="#xampp">XAMPP</a></h1>
+<p><strong>XAMPP</strong> is a free web server software package that allows you to develop and test your web applications on a local computer.</p>
+<h2 id="download"><a class="header" href="#download">Download</a></h2>
+<ul>
+<li><a href="https://www.apachefriends.org/es/download.html">Download XAMPP</a></li>
+</ul>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<p>Install <code>XAMPP</code> on your computer, for example inside <code>C:</code> with the default settings.
+After installing, open <code>XAMPP</code> and activate the <code>Apache</code> and <code>MySQL</code> services, like in the picture below:</p>
+<p><img src="installation/../img/xampp.jpg" alt="XAMPP" /></p>
+<p>Now navigate to <a href="http://localhost">http://localhost</a>.</p>
+<h2 id="run-php"><a class="header" href="#run-php">Run PHP</a></h2>
+<p>Assuming <code>XAMPP</code> is installed at <code>C:\xampp</code>, you can run <code>PHP</code> scripts by placing them into <code>htdocs</code> folder. For example, create an <code>index.php</code> file at <code>C:\xampp\htdocs\myphp\index.php</code>, and insert the following code:</p>
+<pre><code class="language-php">&lt;?php
+echo &quot;PHP 😀!&quot;;
+?&gt;
+</code></pre>
+<p>Navigate to <a href="http://localhost/myphp/index.php">http://localhost/myphp/index.php</a> and you should see the following message:</p>
+<pre><code class="language-html">echo &quot;PHP 😀!&quot;;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
+<p>The lines that start with <code>//</code> are comments. They are ignored by the <code>PHP</code> interpreter and, in general, are just useful for humans to make the code more readable.</p>
+<p>In a file with <code>.php</code> extension, place the following code:</p>
+<pre><code class="language-php">&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+// single-line comments are like this
+# or like this (less common)
+/* double-line comments are written
+   like this, so that you can keep typing
+   and typing
+*/
+?&gt;
+
+&lt;?php
+// Prints Hello World! to stdout.
+// Stdout is the web page if running in a browser.
+echo('Hello World!');
+
+print('Hello World!'); // The same as echo
+
+// echo and print are language constructs,
+// and the parentheses are optional.
+echo 'Hello World!';
+print 'Hello World!';
+
+echo 100; // Echo scalar variables directly
+?&gt;
+
+&lt;br&gt;
+&lt;?php echo &quot;Hello World with line break!&quot;; ?&gt;&lt;br/&gt;
+&lt;?php echo &quot;Hello&quot; . &quot; World with concatenation!&quot;; ?&gt;&lt;br/&gt;
+&lt;?php echo 1 + 1; // arithmetic?&gt; &lt;br/&gt;
+
+&lt;?php
+// Variable
+$paragraph = '🧑‍💻👩‍💻🧑🏻‍💻👩🏻‍💻🧑🏼‍💻👩🏼‍💻🧑🏽‍💻👩🏽‍💻🧑🏾‍💻👩🏾‍💻🧑🏿‍💻👩🏿‍💻';
+?&gt;
+
+&lt;?php echo $paragraph; // output the variable content ?&gt;&lt;br/&gt;
+&lt;?php echo '$paragraph'; // output $paragraph ?&gt;&lt;br/&gt;
+&lt;?php echo &quot;$paragraph&quot;; // output the variable content ?&gt;&lt;br/&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="output"><a class="header" href="#output">Output</a></h2>
+<pre><code>Hello World!Hello World!Hello World!Hello World!100
+Hello World with line break!
+Hello World with concatenation!
+2
+🧑‍💻👩‍💻🧑🏻‍💻👩🏻‍💻🧑🏼‍💻👩🏼‍💻🧑🏽‍💻👩🏽‍💻🧑🏾‍💻👩🏾‍💻🧑🏿‍💻👩🏿‍💻
+$paragraph
+🧑‍💻👩‍💻🧑🏻‍💻👩🏻‍💻🧑🏼‍💻👩🏼‍💻🧑🏽‍💻👩🏽‍💻🧑🏾‍💻👩🏾‍💻🧑🏿‍💻👩🏿‍💻
+</code></pre>
+<h2 id="explanation"><a class="header" href="#explanation">Explanation:</a></h2>
+<ul>
+<li>The <code>&lt;?php</code> tag starts the execution of the <code>PHP</code> code until the <code>?&gt;</code> tag is reached.</li>
+<li>multiple <code>&lt;?php ?&gt;</code> tags are used to switch from <code>PHP</code> to <code>HTML</code> code.</li>
+<li><code>&lt;br&gt;</code> is used to create a line break.</li>
+<li>comments are not outputed by the <code>PHP</code> interpreter.</li>
+<li>the difference between double quotes and single quotes is that double quotes can contain and interpret <a href="installation//tutorial/php/syntax/variables.html">variables</a>.</li>
+</ul>
+<blockquote>
+<p>If your php file only contains PHP code, it is the best practice to omit the php closing tag to prevent accidental output.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<pre><code class="language-php">&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Variables&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+
+$var1 = 10;
+echo $var1; // 10
+
+echo &quot;&lt;br /&gt;&quot;;
+
+$var1 = &quot;Ten&quot;;
+echo $var1; // Ten
+
+echo &quot;&lt;br /&gt;&quot;;
+
+$var2 = &quot;💻&quot;;
+echo $var2; // 💻
+
+$var1copy = $var1;
+$var1 = 200;
+
+echo &quot;&lt;br /&gt;&quot;;
+echo $var1copy; // Ten
+
+$var1ref = &amp;$var1;
+$var1 = 1000;
+
+echo &quot;&lt;br /&gt;&quot;;
+echo $var1ref; // 1000
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="output-1"><a class="header" href="#output-1">Output</a></h2>
+<pre><code>10
+Ten
+💻
+Ten
+1000
+</code></pre>
+<h2 id="explanation-1"><a class="header" href="#explanation-1">Explanation:</a></h2>
+<ul>
+<li>a variable in <code>PHP</code> is created by using the <code>$</code> sign followed by the name of the variable.</li>
+<li><code>$var1copy</code> is a copy of the value of <code>$var1</code>. <code>$var1copy</code> and <code>$var1</code> are two different variables, <strong>with different addressed</strong> in memory. In fact when <code>$var1</code> is assigned a new value, <code>$var1copy</code> is not changed.</li>
+<li><code>$var1ref</code> is a reference to the value of <code>$var1</code>. A reference is created with <code>&amp;</code> sign.<code>$var1ref</code> and <code>$var1</code> are two different variables, <strong>with the same addressed</strong> in memory. When <code>$var1</code> is assigned a new value, <code>$var1ref</code> is changed. </li>
+<li>the first assignement to <code>$var1</code> is an integer value. The second assignement is a string value. In <code>PHP</code> variables have dynamic types and can hold any <a href="syntax//tutorial/php/syntax/types/">data type</a>.</li>
+</ul>
+<blockquote>
+<p>Using references (pointers) is a good way to avoid copying the values of variables, which makes the code more efficient. </p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
