@@ -25,11 +25,10 @@
     <br />
     Increment: <?php $var2++; echo $var2; ?><br />
     Decrement: <?php $var2--; echo $var2; ?><br />
-    <br />
     <?php
       // PHP will convert a string to an integer
       // but it is sloppy programming
-      echo 1 + "2 houses";
+      echo 1 + "2 houses"; // warning
     ?>
   </body>
 </html>

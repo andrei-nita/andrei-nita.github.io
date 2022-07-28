@@ -19,7 +19,9 @@
     ?>
 
     <?php // can't even redefine it
-    define("MAX_WIDTH", 981);
+    define("MAX_WIDTH", 981); // error
+
+    echo "<br />";
     echo MAX_WIDTH;
     ?>
 
