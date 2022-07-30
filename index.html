@@ -83,9 +83,8 @@
     <span class="icon" aria-label="Menu" onclick="toggleMenu()">
         &#9776;
     </span>
-<!--    <span id="pwa" class="btn addToHomeScreen"-->
-<!--          style="display: none" onclick="installApp()">Install App</span>-->
-    <div class='onesignal-customlink-container'></div>
+    <span id="pwa" class="btn addToHomeScreen"
+          style="display: none" onclick="installApp()">Install App</span>
 </nav>
 
 <!--Header-->
@@ -345,16 +344,6 @@
 
     window.addEventListener('appinstalled', function (evt) {
         console.log('App Installed Event');
-    });
-</script>
-
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-            appId: "88ae61b7-c87a-4a92-ace1-dd8235d67cdc",
-        });
     });
 </script>
 </script>
