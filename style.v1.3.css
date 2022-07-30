@@ -224,10 +224,12 @@ body {
   background-color: #114aad;
   border: none;
   color: white;
-  padding: 14px 16px;
+  padding: 6px 16px;
   cursor: pointer;
   float: right;
   border-radius: 30px;
+  margin-top: 8px;
+  margin-right: 8px;
 }
 
 /* Dropdown container - needed to position the dropdown content */
@@ -736,4 +738,4 @@ q {
   }
 }
 
-/*# sourceMappingURL=style.v1.0.css.map */
+/*# sourceMappingURL=style.v1.3.css.map */
