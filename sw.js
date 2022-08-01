@@ -1,5 +1,3 @@
-importScripts("https://cdn.pushalert.co/sw-48156.js");
-
 var CACHE_NAME = 'my-site-cache-v1.1';
 var urlsToCache = [
     '/',
